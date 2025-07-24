@@ -26,8 +26,7 @@ Lê arquivos de uma pasta local especificada no container NiFi.
 
 
           volumes: 
-
-                              nifi-project/
+                    nifi-project/
                     ├── README.md               → Documentação do projeto (objetivo, instruções, etc.)
                     ├── .gitignore              → Arquivos/pastas a ignorar no Git (logs, dados sensíveis, etc.)
                     ├── drivers/                → Drivers JDBC (referenciar, não versionar JARs grandes)
