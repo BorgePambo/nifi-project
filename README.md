@@ -23,6 +23,24 @@ Lê arquivos de uma pasta local especificada no container NiFi.
           MySQL (via container Docker)
 
           Docker Compose
+
+
+          volumes: 
+
+                              nifi-project/
+                    ├── README.md               → Documentação do projeto (objetivo, instruções, etc.)
+                    ├── .gitignore              → Arquivos/pastas a ignorar no Git (logs, dados sensíveis, etc.)
+                    ├── drivers/                → Drivers JDBC (referenciar, não versionar JARs grandes)
+                    ├── flows/                  → Arquivos JSON exportados dos fluxos NiFi
+                    │   ├── fluxo-nifi-v1.json  → Export do fluxo NiFi atual
+                    │   └── ...
+                    └── docker/
+                        ├── docker-compose.yml  → Configuração para subir NiFi e serviços relacionados
+                        └── volumes/
+                            └── drivers/        → Pasta para mapear drivers no container Docker
+
+
+
           
           Driver JDBC MySQL 8.0.23
 
