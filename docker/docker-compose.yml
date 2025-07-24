@@ -1,0 +1,27 @@
+version: '3.8'
+
+services:
+  nifi:
+    container_name: nifi_ctner
+    image: apache/nifi:latest
+    ports:
+      - "8443:8443"
+      - "8081:8081"   # porta do HandleHttpRequest
+    environment:
+      - SINGLE_USER_CREDENTIALS_USERNAME=admin
+      - SINGLE_USER_CREDENTIALS_PASSWORD=Borginho1974
+    volumes:
+      - /home/borge/ApacheNIFI/NifiContainerVolume:/opt/nifi/nifi-current/drivers
+      - /home/borge/ApacheNIFI/Datasets:/opt/nifi/nifi-current/datasets-mine
+
+
+  mysql:
+    container_name: mysql_ctnr
+    image: mysql:latest
+    ports:
+      - "3030:3306"
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: admin
+    volumes:
+      - /home/borge/ApacheNIFI/MySQLContainerVolume:/var/lib/mysql
